@@ -29,7 +29,7 @@ const usersDB = [
     age: "73",
     imgSrc:
       "https://static.wikia.nocookie.net/spongebob-new-fanon/images/0/0f/Eugene_H._Krabs.png",
-    city: "Houston, Texas",
+    city: "Bikini Bottom",
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ const usersDB = [
     age: "36",
     imgSrc:
       "https://static.wikia.nocookie.net/spongebob-new-fanon/images/2/2d/Sandycheeks.png",
-    city: "Bikini Bottom",
+    city: "Houston, Texas",
   },
   {
     id: 5,

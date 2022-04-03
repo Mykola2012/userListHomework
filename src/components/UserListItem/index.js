@@ -10,6 +10,7 @@ function UsersListItem(props) {
 
   const liStyle = {
     border: `2px solid ${isSelected ? "rgb(240, 5, 5)" : "rgb(8, 8, 224)"}`,
+    margin: `${isSelected ? "30px 0" : "10px 0 0"}`,
   };
 
   return (
