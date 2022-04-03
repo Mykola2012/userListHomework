@@ -1,7 +1,6 @@
 import UsersListItem from "../UserListItem";
-// import styles from "./UsersList.module.css";
 
-function UsersList({ users, setUsers }) {
+function UsersList({ users, setUsers, setUpdatedUsers }) {
   const mapUser = (u, index) => {
     const selectUser = () => {
       const newUsers = [...users];
@@ -11,7 +10,22 @@ function UsersList({ users, setUsers }) {
       setUsers(newUsers);
     };
 
-    return <UsersListItem key={u.id} user={u} selectUser={selectUser} />;
+    const removeUser = () => {
+      const updatedUsers = [...users];
+
+      updatedUsers.splice(index, 1);
+
+      setUpdatedUsers(updatedUsers);
+    };
+
+    return (
+      <UsersListItem
+        key={u.id}
+        user={u}
+        selectUser={selectUser}
+        removeUser={removeUser}
+      />
+    );
   };
 
   return <ul>{users.map(mapUser)}</ul>;

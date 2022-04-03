@@ -6,18 +6,20 @@ import React, { Component } from "react";
 const usersDB = [
   {
     id: 1,
-    firstName: "Patrik",
-    lastName: "Star",
-    age: "Unknown",
-    imgSrc: "",
+    firstName: "SpongeBob",
+    lastName: "SquarePants",
+    age: "35",
+    imgSrc:
+      "https://static.wikia.nocookie.net/spongebob-new-fanon/images/c/cb/SpongeBob.png",
     city: "Bikini Bottom",
   },
   {
     id: 2,
-    firstName: "SpongeBob",
-    lastName: "SquarePants",
-    age: "35",
-    imgSrc: "",
+    firstName: "Patrik",
+    lastName: "Star",
+    age: "Unknown",
+    imgSrc:
+      "https://static.wikia.nocookie.net/spongebob-new-fanon/images/c/cf/Patrick.png",
     city: "Bikini Bottom",
   },
   {
@@ -25,7 +27,26 @@ const usersDB = [
     firstName: "Eugene",
     lastName: "Krabs",
     age: "73",
-    imgSrc: "",
+    imgSrc:
+      "https://static.wikia.nocookie.net/spongebob-new-fanon/images/0/0f/Eugene_H._Krabs.png",
+    city: "Houston, Texas",
+  },
+  {
+    id: 4,
+    firstName: "Sandy",
+    lastName: "Cheeks",
+    age: "36",
+    imgSrc:
+      "https://static.wikia.nocookie.net/spongebob-new-fanon/images/2/2d/Sandycheeks.png",
+    city: "Bikini Bottom",
+  },
+  {
+    id: 5,
+    firstName: "Sheldon",
+    lastName: "Plankton",
+    age: "Unknown",
+    imgSrc:
+      "https://static.wikia.nocookie.net/spongebob/images/7/77/Plankton_stock_art.png",
     city: "Bikini Bottom",
   },
 ];
@@ -43,9 +64,19 @@ class App extends Component {
     this.setState({ users: newUsers });
   };
 
+  setUpdatedUsers = (updatedUsers) => {
+    this.setState({ users: updatedUsers });
+  };
+
   render() {
     const { users } = this.state;
-    return <UsersList users={users} setUsers={this.setUsers} />;
+    return (
+      <UsersList
+        users={users}
+        setUsers={this.setUsers}
+        setUpdatedUsers={this.setUpdatedUsers}
+      />
+    );
   }
 }
 

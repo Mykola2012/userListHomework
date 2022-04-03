@@ -1,18 +1,36 @@
-// import styles from "./UsersListItem.module.css";
+import styles from "./UsersListItem.module.css";
+import TrashIcon from "mdi-react/TrashIcon";
 
 function UsersListItem(props) {
   const {
-    user: { id, firstName, lastName, age, imgSrc, city, isSelected },
+    user: { firstName, lastName, age, imgSrc, city, isSelected },
+    selectUser,
+    removeUser,
   } = props;
 
+  const liStyle = {
+    border: `2px solid ${isSelected ? "rgb(240, 5, 5)" : "rgb(8, 8, 224)"}`,
+  };
+
   return (
-    <li>
-      <img src={imgSrc} alt={`${firstName} ${lastName}`} />
-      <h2>
-        {lastName} {firstName}
-      </h2>
-      <p>Age {age}</p>
-      <p>City {city}</p>
+    <li
+      className={styles.listItem}
+      onClickCapture={() => selectUser()}
+      style={liStyle}
+    >
+      <img
+        src={imgSrc}
+        alt={`${firstName} ${lastName}`}
+        className={styles.imgUser}
+      />
+      <div className={styles.infoUserWrapper}>
+        <h2>
+          {firstName} {lastName}
+        </h2>
+        <p>Age: {age}</p>
+        <p>City: {city}</p>
+      </div>
+      <TrashIcon className={styles.trashIcon} onClick={() => removeUser()} />
     </li>
   );
 }
